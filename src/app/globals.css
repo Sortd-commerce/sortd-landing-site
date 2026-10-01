@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #143503;
+  --color-body: #2e4a22;
+  --color-leaf: #4a7a2e;
+  --color-muted: #3d5c32;
+  --color-sky: #d3e5f3;
+  --color-cream: #fff2e6;
+  --color-pill: #d5e6f2;
+  --color-foam: #f4f7f2;
+  --color-panel: #123a06;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+  background: #fff;
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+section[id],
+#top,
+#main {
+  scroll-margin-top: 5.5rem;
+}
+
+::selection {
+  background: #cfe3c4;
+  color: #143503;
+}
+
+:focus-visible {
+  outline: 2px solid #143503;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px #fff;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 80;
+  transform: translateY(-150%);
+  border-radius: 999px;
+  background: #143503;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.ticker-clip {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-dialog {
+  margin: 12px auto auto;
+  width: min(100% - 24px, 28rem);
+  max-height: calc(100dvh - 24px);
+  border: 0;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: #fff2e6;
+  color: #143503;
+}
+
+.menu-dialog::backdrop {
+  background: rgb(20 53 3 / 0.45);
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-settle {
+  animation: settle 0.75s cubic-bezier(0.22, 0.8, 0.28, 1) both;
+}
+
+.animate-marquee {
+  animation: marquee 36s linear infinite;
+}
+
+.ticker-clip:hover .animate-marquee,
+.ticker-clip:focus-within .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-settle,
+  .animate-marquee,
+  .menu-dialog[open] {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-dialog[open] {
+    animation: settle 0.22s cubic-bezier(0.22, 0.8, 0.28, 1);
+  }
+}
