@@ -71,13 +71,33 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
   }, []);
 
   function openMenu() {
-    dialogRef.current?.showModal();
+    const dialog = dialogRef.current;
+    if (!dialog || dialog.open) return;
+    dialog.classList.remove("is-closing");
+    dialog.showModal();
     setOpen(true);
   }
 
   function closeMenu() {
-    dialogRef.current?.close();
-    setOpen(false);
+    const dialog = dialogRef.current;
+    if (!dialog || !dialog.open) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || dialog.classList.contains("is-closing")) {
+      if (reduce) {
+        dialog.close();
+        setOpen(false);
+      }
+      return;
+    }
+    dialog.classList.add("is-closing");
+    const finish = (event: AnimationEvent) => {
+      if (event.target !== dialog || event.animationName !== "menu-close") return;
+      dialog.removeEventListener("animationend", finish);
+      dialog.classList.remove("is-closing");
+      dialog.close();
+      setOpen(false);
+    };
+    dialog.addEventListener("animationend", finish);
   }
 
   return (
@@ -157,6 +177,10 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
           className="menu-screen md:hidden"
           aria-labelledby={titleId}
           onClose={() => setOpen(false)}
+          onCancel={(event) => {
+            event.preventDefault();
+            closeMenu();
+          }}
         >
           <div className="flex min-h-dvh flex-col px-5 pt-0 pb-8">
             <div className="flex h-16 items-center justify-between">
@@ -178,7 +202,11 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
             <nav className="mt-7" aria-label="Mobile">
               <ol>
                 {links.map((link, index) => (
-                  <li key={link.href} className="border-b border-[#fff2e6]/30">
+                  <li
+                    key={link.href}
+                    className="menu-rise border-b border-[#fff2e6]/30"
+                    style={{ animationDelay: `${120 + index * 55}ms` }}
+                  >
                     <a
                       href={link.href}
                       className="flex items-center gap-3.5 py-[18px]"
@@ -203,7 +231,7 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
               </ol>
             </nav>
 
-            <div className="mt-auto flex flex-col items-center pt-10">
+            <div className="menu-rise mt-auto flex flex-col items-center pt-10" style={{ animationDelay: "360ms" }}>
               <a
                 href="/#products"
                 className="inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full bg-[#fff2e6] text-[15px] font-semibold text-ink"

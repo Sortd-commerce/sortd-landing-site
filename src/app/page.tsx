@@ -31,23 +31,25 @@ export default function HomePage() {
               <span className="relative inline-block">
                 So you never have to.
                 <svg
-                  viewBox="0 0 280 16"
-                  className="absolute top-full left-0 mt-1 h-3 w-[118%] text-leaf md:mt-2 md:h-4 md:w-[124%]"
+                  viewBox="0 0 280 32"
+                  preserveAspectRatio="none"
+                  className="absolute top-full left-0 mt-0.5 h-5 w-[112%] text-leaf md:mt-1 md:h-[30px]"
                   aria-hidden="true"
                 >
                   <path
                     className="hero-scribble"
-                    d="M2 9c36-7 62 6 104-1s64 6 108 0 46-5 64 2"
+                    d="M2 18.7C4.8 17.8 13.4 14.4 19.1 13.4C24.8 12.5 30.4 12.7 36.1 12.9C41.8 13.1 47.5 14 53.2 14.5C58.9 15 64.6 15.6 70.3 16C76 16.5 81.6 17.2 87.3 17.1C93 17 98.7 16.6 104.4 15.5C110.1 14.5 115.8 12.4 121.5 10.8C127.2 9.2 132.8 7.2 138.5 6.1C144.2 5 149.9 4.3 155.6 4C161.3 3.7 167 3.7 172.7 4C178.4 4.3 184 5 189.7 6.1C195.4 7.2 201.1 8.9 206.8 10.8C212.5 12.7 218.2 15.3 223.9 17.6C229.6 19.9 235.3 23 240.9 24.4C246.6 25.8 252.3 28.5 258 26C263.7 23.5 271.7 12.4 275.1 9.2C278.4 6.1 277.5 7.5 278 7.1"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2.4"
+                    strokeWidth="5"
                     strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
                   />
                 </svg>
               </span>
             </p>
             <p
-              className="hero-settle mt-5 max-w-[40rem] text-base leading-[1.55] text-body md:mt-8 md:text-[21px]"
+              className="hero-settle mt-6 max-w-[40rem] text-base leading-[1.55] text-body md:mt-10 md:text-[21px]"
               style={{ animationDelay: "160ms" }}
             >
               <span className="font-serif text-[22px] leading-none font-bold text-ink md:text-[44px]">Sortd</span>{" "}
