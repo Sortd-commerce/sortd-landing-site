@@ -29,7 +29,10 @@ export function CategoryGrid() {
             return null;
           }
           return (
-            <li key={item.name} className={`text-left ${collapsed ? "hidden md:block" : ""} ${expanded && index >= previewCount ? "tile-in" : ""}`}>
+            <li
+              key={item.name}
+              className={`category-tile text-left ${collapsed ? "hidden md:block" : ""} ${expanded && index >= previewCount ? "tile-in" : ""}`}
+            >
               <Reveal delay={Math.min(index, 8) * 45}>
                 <div className="overflow-hidden rounded-[12px] md:rounded-[28px]">
                   <Image
@@ -47,7 +50,7 @@ export function CategoryGrid() {
             </li>
           );
         })}
-        <li className="hidden text-left md:block">
+        <li className="category-tile hidden text-left md:block">
           <Reveal delay={360}>
             <div className="aspect-square w-full flex items-center justify-start pl-2 rounded-[28px] border border-dashed border-muted bg-foam">
               <p className="px-3 text-left font-mono text-xs tracking-[0.14em] text-leaf uppercase">Coming next</p>

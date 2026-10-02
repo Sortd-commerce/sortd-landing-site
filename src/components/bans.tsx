@@ -2,11 +2,16 @@
 
 import { bans } from "@/lib/content";
 import { Reveal } from "@/components/reveal";
+import { useFinePointer, usePrefersReducedMotion } from "@/components/use-prefers-reduced-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
 export function Bans() {
   const [active, setActive] = useState(bans[0].id);
+  const [hovered, setHovered] = useState<number | null>(null);
+  const reduce = usePrefersReducedMotion();
+  const finePointer = useFinePointer();
+  const allowFocus = finePointer && reduce === false;
   const scrollerRef = useRef<HTMLDivElement>(null);
 
   function scrollToCard(id: string) {
@@ -107,17 +112,25 @@ export function Bans() {
         <div
           ref={scrollerRef}
           id="ban-scroller"
-          className="no-scrollbar mt-4 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto pb-2 md:mt-5 md:gap-6"
+          className="no-scrollbar mt-4 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto py-3 md:mt-5 md:gap-6"
           tabIndex={0}
           aria-label="Ingredient cards"
           onScroll={onRailScroll}
         >
-          {bans.map((ban, index) => (
+          {bans.map((ban, index) => {
+            const dimmed = allowFocus && hovered !== null && hovered !== index;
+            return (
             <article
               key={ban.id}
               id={`ban-${ban.id}`}
               style={{ backgroundColor: ban.tint }}
-              className="flex aspect-[400/580] w-[min(78vw,400px)] shrink-0 snap-start flex-col items-start overflow-hidden rounded-[20px] p-0 text-ink md:aspect-auto md:h-[580px] md:w-[400px]"
+              onMouseEnter={() => {
+                if (allowFocus) setHovered(index);
+              }}
+              onMouseLeave={() => setHovered(null)}
+              className={`flex aspect-[400/580] w-[min(78vw,400px)] shrink-0 snap-start flex-col items-start overflow-hidden rounded-[20px] p-0 text-ink transition-all duration-300 ease-out md:aspect-auto md:h-[580px] md:w-[400px] ${
+                dimmed ? "scale-95 blur-sm" : ""
+              }`}
               aria-current={active === ban.id ? "true" : undefined}
             >
               <Reveal delay={Math.min(index, 4) * 80} className="flex h-full w-full flex-col">
@@ -176,7 +189,8 @@ export function Bans() {
                 </div>
               </Reveal>
             </article>
-          ))}
+            );
+          })}
         </div>
         <div className="mt-6 flex items-center gap-4 md:hidden">
           <div className="flex flex-1 gap-1" aria-hidden="true">

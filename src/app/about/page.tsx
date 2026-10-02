@@ -25,23 +25,48 @@ export default function AboutPage() {
       <SiteHeader />
 
       <main id="main">
-        <section className="flex flex-col gap-8 px-6 py-12 lg:flex-row lg:items-end lg:gap-16 lg:px-[100px] lg:py-24">
-          <div className="lg:flex lg:h-[321px] lg:flex-1 lg:flex-col lg:justify-end">
-            <p className="font-mono text-[10px] leading-[1.3] font-normal tracking-[0.14em] text-leaf uppercase lg:text-[12px] lg:font-medium">
-              A note from our founder
-            </p>
-            <h1 className="mt-5 font-serif text-[40px] leading-[0.98] font-bold tracking-[-0.022em] lg:mt-[26px] lg:text-[78px] lg:leading-none">
-              <span className="lg:hidden">
-                Shopping got faster.
-                <br />
-                Choosing well
-                <br />
-                got harder.
-              </span>
-              <span className="hidden lg:inline">We got tired of second-guessing what we buy.</span>
-            </h1>
+        <section className="flex flex-col gap-8 px-6 py-12 lg:grid lg:grid-cols-[minmax(0,1fr)_400px] lg:items-start lg:gap-x-16 lg:px-[100px] lg:py-24">
+          <div className="contents lg:flex lg:flex-col lg:gap-16">
+            <div className="order-1">
+              <p className="font-mono text-[10px] leading-[1.3] font-normal tracking-[0.14em] text-leaf uppercase lg:text-[12px] lg:font-medium">
+                A note from our founder
+              </p>
+              <h1 className="mt-5 font-serif text-[40px] leading-[0.98] font-bold tracking-[-0.022em] lg:mt-[26px] lg:text-[78px] lg:leading-none">
+                <span className="lg:hidden">
+                  Shopping got faster.
+                  <br />
+                  Choosing well
+                  <br />
+                  got harder.
+                </span>
+                <span className="hidden lg:inline">We got tired of second-guessing what we buy.</span>
+              </h1>
+            </div>
+            <div className="order-3 flex flex-col gap-6 min-[1400px]:flex-row min-[1400px]:gap-20">
+              <div className="w-full border-t-2 border-ink pt-3 lg:w-[200px] lg:shrink-0">
+                <p className="font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-leaf lg:text-[11px] lg:font-bold">
+                  DUBAI
+                </p>
+                <p className="mt-2 font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-faint">FOUNDER’S NOTE</p>
+              </div>
+              <div className="flex max-w-[780px] flex-col gap-5 text-[17px] leading-[1.65] text-[#2e4a22] lg:gap-[26px] lg:text-[22px]">
+                <p className="hidden font-bold lg:block">
+                  Shopping got faster. Choice got bigger. But somehow, choosing well got harder.
+                </p>
+                <p>
+                  We kept asking the same things. Is this actually good? Can I trust it? Is it better — or just better
+                  marketed?
+                </p>
+                <p className="font-semibold text-ink">That’s why we built Sortd.</p>
+                <p>We still care about speed, and we aim to get your order to you within 30 minutes.</p>
+                <p>
+                  We do the digging, the checking, the tasting and the rejecting before a product ever reaches you — so you
+                  can shop with confidence, without overthinking every choice.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="relative h-[420px] w-full overflow-hidden rounded-[14px] bg-sky lg:h-[470px] lg:w-[400px] lg:shrink-0 lg:rounded-2xl">
+          <div className="relative order-2 h-[420px] w-full overflow-hidden rounded-[14px] bg-sky lg:h-[470px] lg:w-[400px] lg:rounded-2xl">
             <Image
               src="/photos/figma/founder.jpg"
               alt="Portrait of the Sortd founder"
@@ -50,30 +75,6 @@ export default function AboutPage() {
               sizes="(min-width: 1024px) 400px, 100vw"
               className="object-cover object-[center_18%]"
             />
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-6 px-6 pb-14 lg:flex-row lg:gap-20 lg:px-[100px] lg:pb-24">
-          <div className="w-full border-t-2 border-ink pt-3 lg:w-[200px] lg:shrink-0">
-            <p className="font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-leaf lg:text-[11px] lg:font-bold">
-              DUBAI
-            </p>
-            <p className="mt-2 font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-faint">FOUNDER’S NOTE</p>
-          </div>
-          <div className="flex max-w-[780px] flex-col gap-5 text-[17px] leading-[1.65] text-[#2e4a22] lg:gap-[26px] lg:text-[22px]">
-            <p className="hidden font-bold lg:block">
-              Shopping got faster. Choice got bigger. But somehow, choosing well got harder.
-            </p>
-            <p>
-              We kept asking the same things. Is this actually good? Can I trust it? Is it better — or just better
-              marketed?
-            </p>
-            <p className="font-semibold text-ink">That’s why we built Sortd.</p>
-            <p>We still care about speed, and we aim to get your order to you within 30 minutes.</p>
-            <p>
-              We do the digging, the checking, the tasting and the rejecting before a product ever reaches you — so you
-              can shop with confidence, without overthinking every choice.
-            </p>
           </div>
         </section>
 

@@ -398,7 +398,15 @@ export default function HomePage() {
                   <figcaption className="mb-3 font-sans text-[28px] leading-none font-bold tracking-[-0.015em] text-leaf md:text-[32px]">
                     {item.name}
                   </figcaption>
-                  <div className="overflow-hidden rounded-[28px]">
+                  <div
+                    className={`relative overflow-hidden rounded-[28px] transition-all duration-500 ease-out motion-reduce:transition-none ${
+                      index % 3 === 1
+                        ? "origin-center motion-safe:md:hover:z-10 motion-safe:md:hover:scale-105"
+                        : index % 3 === 0
+                          ? "origin-bottom motion-safe:md:hover:z-10 motion-safe:md:hover:-rotate-6"
+                          : "origin-bottom motion-safe:md:hover:z-10 motion-safe:md:hover:rotate-6"
+                    }`}
+                  >
                     <Image
                       src={item.src}
                       alt={`${item.name}, split between what passes and what does not`}
