@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "A note from the founder of Sortd. We check, taste and reject products before they ever reach you.",
 };
-
-const nav = [
-  { href: "/#vet", label: "The quality engine" },
-  { href: "/#bans", label: "What we reject" },
-  { href: "/#products", label: "Membership" },
-];
 
 const stats = [
   { value: "500+", label: "harmful ingredients" },
@@ -27,27 +22,7 @@ export default function AboutPage() {
         Skip to content
       </a>
 
-      <header className="hidden h-[88px] items-center justify-between border-b border-[#e4d9c7] px-10 lg:flex xl:px-[100px]">
-        <Link href="/" className="font-serif text-[32px] leading-[1.05] font-bold tracking-[-0.012em]">
-          SORTD
-        </Link>
-        <nav className="flex items-center gap-9 text-[15px] leading-[1.4]" aria-label="Primary">
-          {nav.map((item) => (
-            <Link key={item.label} href={item.href} className="font-medium text-[#2e4a22] hover:text-ink">
-              {item.label}
-            </Link>
-          ))}
-          <Link href="/about" aria-current="page" className="font-semibold text-ink">
-            About
-          </Link>
-        </nav>
-        <Link
-          href="/#products"
-          className="rounded-full bg-ink px-6 py-[13px] text-[15px] leading-[1.4] font-medium text-[#fff2e6]"
-        >
-          Become a member
-        </Link>
-      </header>
+      <SiteHeader />
 
       <main id="main">
         <section className="flex flex-col gap-8 px-6 py-12 lg:flex-row lg:items-end lg:gap-16 lg:px-[100px] lg:py-24">
