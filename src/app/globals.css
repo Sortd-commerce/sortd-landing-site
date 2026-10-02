@@ -4,14 +4,22 @@
   --color-ink: #143503;
   --color-body: #2e4a22;
   --color-leaf: #4a7a2e;
-  --color-muted: #3d5c32;
+  --color-muted: #3a5530;
   --color-sky: #d3e5f3;
   --color-cream: #fff2e6;
-  --color-pill: #d5e6f2;
+  --color-pill: #d3e5f3;
   --color-foam: #f4f7f2;
-  --color-panel: #123a06;
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), ui-serif, georgia, serif;
+  --color-panel: #1e4a0b;
+  --color-sand: #a7d1ae;
+  --color-faint: #6e8467;
+  --color-hairline: #e4d9c7;
+  --color-flag: #8c2f14;
+  --color-flag-bg: #f7e3d8;
+  --color-tint: #f8eadb;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-archivo-narrow), "Arial Narrow", sans-serif;
+  --font-lora: var(--font-lora-family), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-plex-family), ui-monospace, monospace;
 }
 
 html {
@@ -77,19 +85,22 @@ section[id],
   display: none;
 }
 
-.menu-dialog {
-  margin: 12px auto auto;
-  width: min(100% - 24px, 28rem);
-  max-height: calc(100dvh - 24px);
+.menu-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
   border: 0;
-  padding: 1.5rem;
-  border-radius: 1.5rem;
-  background: #fff2e6;
-  color: #143503;
+  padding: 0;
+  background: #143503;
+  color: #fff2e6;
 }
 
-.menu-dialog::backdrop {
-  background: rgb(20 53 3 / 0.45);
+.menu-screen::backdrop {
+  background: #143503;
 }
 
 @keyframes settle {
@@ -113,7 +124,86 @@ section[id],
 }
 
 .hero-settle {
-  animation: settle 0.75s cubic-bezier(0.22, 0.8, 0.28, 1) both;
+  animation: settle 0.8s cubic-bezier(0.22, 0.8, 0.28, 1) both;
+}
+
+.hero-scribble {
+  stroke-dasharray: 460;
+}
+
+.hero-media,
+.reveal-media {
+  transform-origin: center;
+}
+
+@keyframes scribble {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes media-in {
+  from {
+    transform: scale(1.07);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(-18px) scale(1.045);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-scribble {
+    stroke-dashoffset: 460;
+    animation: scribble 0.95s 0.55s cubic-bezier(0.22, 0.8, 0.28, 1) forwards;
+  }
+
+  .hero-media {
+    animation: media-in 1.15s 0.12s cubic-bezier(0.22, 0.8, 0.28, 1) both;
+  }
+
+  .reveal.is-ready {
+    transition:
+      opacity 0.85s cubic-bezier(0.22, 0.8, 0.28, 1),
+      transform 0.85s cubic-bezier(0.22, 0.8, 0.28, 1);
+  }
+
+  .reveal.is-ready:not(.is-in) {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal.is-ready:not(.is-in) .reveal-media {
+    transform: scale(1.06);
+  }
+
+  .reveal.is-in .reveal-media {
+    transform: none;
+    transition: transform 1.15s cubic-bezier(0.22, 0.8, 0.28, 1);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-drift {
+      animation: hero-drift linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 45%;
+    }
+  }
 }
 
 .animate-marquee {
@@ -125,6 +215,23 @@ section[id],
   animation-play-state: paused;
 }
 
+@keyframes tile-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tile-in {
+    animation: tile-in 0.55s cubic-bezier(0.22, 0.8, 0.28, 1) both;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -132,13 +239,27 @@ section[id],
 
   .hero-settle,
   .animate-marquee,
-  .menu-dialog[open] {
+  .hero-media,
+  .hero-drift,
+  .hero-scribble,
+  .menu-screen[open] {
     animation: none;
+  }
+
+  .hero-scribble {
+    stroke-dashoffset: 0;
+  }
+
+  .reveal,
+  .reveal-media {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .menu-dialog[open] {
+  .menu-screen[open] {
     animation: settle 0.22s cubic-bezier(0.22, 0.8, 0.28, 1);
   }
 }
