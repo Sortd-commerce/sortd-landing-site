@@ -171,6 +171,7 @@ export const pillars = [
     cta: "See our standard",
     alt: "Choose better. What goes in the basket matters. We choose products for what is actually in them, not for what the front of the pack says.",
     href: "/#vet",
+    image_position: "object-[50%_center]",
   },
   {
     src: "/photos/figma/img-011306-am-1.svg",
@@ -180,6 +181,7 @@ export const pillars = [
     cta: "What we check",
     alt: "Know better. Good food starts with a good label. Every product is checked past the claim — ingredients, nutrition, sourcing and lab results.",
     href: "/#bans",
+    image_position: "object-[55%_center]",
   },
   {
     src: "/photos/figma/img-011302-am-1.svg",
@@ -189,5 +191,6 @@ export const pillars = [
     cta: "Browse the shelf",
     alt: "Feel better. Less guesswork. More good food. If it is on Sortd, it already passed.",
     href: "/#products",
+    image_position: "object-[50%_center]",
   },
 ];

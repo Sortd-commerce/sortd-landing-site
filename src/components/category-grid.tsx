@@ -49,8 +49,8 @@ export function CategoryGrid() {
         })}
         <li className="hidden text-left md:block">
           <Reveal delay={360}>
-            <div className="grid aspect-square w-full place-items-center rounded-[28px] border border-dashed border-muted bg-foam">
-              <p className="px-3 text-center font-mono text-xs tracking-[0.14em] text-leaf uppercase">Coming next</p>
+            <div className="aspect-square w-full flex items-center justify-start pl-2 rounded-[28px] border border-dashed border-muted bg-foam">
+              <p className="px-3 text-left font-mono text-xs tracking-[0.14em] text-leaf uppercase">Coming next</p>
             </div>
             <p className="mt-3 text-sm font-medium text-muted">Fresh produce</p>
           </Reveal>

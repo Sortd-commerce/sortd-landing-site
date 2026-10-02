@@ -56,7 +56,7 @@ export function Bans() {
           <h2 id="bans-title" className="max-w-xl font-serif text-[42px] leading-[0.94] font-bold tracking-[-0.018em] text-white md:text-[84px] md:leading-[0.92] md:tracking-[-0.02em]">
             What we ban, and why.
           </h2>
-          <p className="mt-5 max-w-md text-base leading-[1.5] text-sand md:text-[21px] md:leading-[1.55]">
+          <p className="mt-5 max-w-lg font-archivo-narrow text-[14px] leading-[1.55] font-light font-[400px] md:text-[18px] md:leading-[2.55] text-[#A7D1AE] ">
             Every ingredient is reviewed for what it is, what it’s there for, and whether it belongs.
           </p>
         </Reveal>
@@ -107,7 +107,7 @@ export function Bans() {
         <div
           ref={scrollerRef}
           id="ban-scroller"
-          className="no-scrollbar mt-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto pb-2 md:mt-5 md:gap-4"
+          className="no-scrollbar mt-4 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto pb-2 md:mt-5 md:gap-6"
           tabIndex={0}
           aria-label="Ingredient cards"
           onScroll={onRailScroll}
@@ -117,23 +117,23 @@ export function Bans() {
               key={ban.id}
               id={`ban-${ban.id}`}
               style={{ backgroundColor: ban.tint }}
-              className="flex w-[296px] shrink-0 snap-start flex-col overflow-hidden rounded-[20px] text-ink md:w-[min(86vw,26rem)] lg:w-[calc((100%-2rem)/3)]"
+              className="flex aspect-[400/580] w-[min(78vw,400px)] shrink-0 snap-start flex-col items-start overflow-hidden rounded-[20px] p-0 text-ink md:aspect-auto md:h-[580px] md:w-[400px]"
               aria-current={active === ban.id ? "true" : undefined}
             >
-              <Reveal delay={Math.min(index, 4) * 80} className="flex h-full flex-col">
+              <Reveal delay={Math.min(index, 4) * 80} className="flex h-full w-full flex-col">
                 <Image
                   src={ban.src}
                   alt={ban.alt}
                   width={1774}
                   height={887}
                   unoptimized
-                  sizes="(min-width: 1024px) 33vw, 86vw"
+                  sizes="400px"
                   className="reveal-media block aspect-[2/1] h-auto w-full object-cover"
                 />
-                <div className="flex flex-1 flex-col px-5 pt-4 pb-5">
+                <div className="flex flex-1 flex-col px-7 pt-7 pb-7">
                   <div className="flex items-start gap-2">
-                    <p className="pt-1 text-[13px] leading-none font-medium text-ink">{ban.n}</p>
-                    <h3 className="font-serif text-[28px] leading-none font-bold tracking-[-0.02em] text-ink">{ban.title}</h3>
+                    <p className="pt-1.5 text-[15px] leading-none font-medium text-ink">{ban.n}</p>
+                    <h3 className="font-serif text-[32px] leading-none font-bold tracking-[-0.02em] text-ink md:text-[36px]">{ban.title}</h3>
                   </div>
                   <ul className="mt-4 flex flex-wrap gap-2">
                     {ban.chips.map((chip) => (
