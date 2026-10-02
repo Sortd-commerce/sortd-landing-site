@@ -18,7 +18,6 @@ const sections = [
 
 export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
   const [open, setOpen] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [sectionLabel, setSectionLabel] = useState("");
   const [showFloat, setShowFloat] = useState(false);
@@ -29,11 +28,9 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
 
   useEffect(() => {
     const onScroll = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
       const y = window.scrollY;
       const delta = y - lastY.current;
       lastY.current = y;
-      setProgress(max > 0 ? Math.min(1, y / max) : 0);
       setScrolled(y > 24);
 
       const footer = document.querySelector("footer");
@@ -163,12 +160,6 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
               </svg>
             </button>
           </div>
-        </div>
-        <div className="absolute inset-x-0 bottom-0 h-0.5 bg-ink/10" aria-hidden="true">
-          <div
-            className="h-full origin-left bg-ink transition-transform duration-150 ease-out"
-            style={{ transform: `scaleX(${progress})` }}
-          />
         </div>
 
         <dialog
