@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
@@ -28,10 +29,13 @@ export default function AboutPage() {
         <section className="flex flex-col gap-8 px-6 py-12 lg:grid lg:grid-cols-[minmax(0,1fr)_400px] lg:items-start lg:gap-x-16 lg:px-[100px] lg:py-24">
           <div className="contents lg:flex lg:flex-col lg:gap-16">
             <div className="order-1">
-              <p className="font-mono text-[10px] leading-[1.3] font-normal tracking-[0.14em] text-leaf uppercase lg:text-[12px] lg:font-medium">
+              <p className="hero-settle font-mono text-[10px] leading-[1.3] font-normal tracking-[0.14em] text-leaf uppercase lg:text-[12px] lg:font-medium">
                 A note from our founder
               </p>
-              <h1 className="mt-5 font-serif text-[40px] leading-[0.98] font-bold tracking-[-0.022em] lg:mt-[26px] lg:text-[78px] lg:leading-none">
+              <h1
+                className="hero-settle mt-5 font-serif text-[40px] leading-[0.98] font-bold tracking-[-0.022em] lg:mt-[26px] lg:text-[78px] lg:leading-none"
+                style={{ animationDelay: "80ms" }}
+              >
                 <span className="lg:hidden">
                   Shopping got faster.
                   <br />
@@ -43,66 +47,86 @@ export default function AboutPage() {
               </h1>
             </div>
             <div className="order-3 flex flex-col gap-6 min-[1400px]:flex-row min-[1400px]:gap-20">
-              <div className="w-full border-t-2 border-ink pt-3 lg:w-[200px] lg:shrink-0">
+              <div
+                className="hero-settle w-full border-t-2 border-ink pt-3 lg:w-[200px] lg:shrink-0"
+                style={{ animationDelay: "160ms" }}
+              >
                 <p className="font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-leaf lg:text-[11px] lg:font-bold">
                   DUBAI
                 </p>
                 <p className="mt-2 font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-faint">FOUNDER’S NOTE</p>
               </div>
               <div className="flex max-w-[780px] flex-col gap-5 text-[17px] leading-[1.65] text-[#2e4a22] lg:gap-[26px] lg:text-[22px]">
-                <p className="hidden font-bold lg:block">
+                <p className="hero-settle hidden font-bold lg:block" style={{ animationDelay: "200ms" }}>
                   Shopping got faster. Choice got bigger. But somehow, choosing well got harder.
                 </p>
-                <p>
+                <p className="hero-settle" style={{ animationDelay: "260ms" }}>
                   We kept asking the same things. Is this actually good? Can I trust it? Is it better — or just better
                   marketed?
                 </p>
-                <p className="font-semibold text-ink">That’s why we built Sortd.</p>
-                <p>We still care about speed, and we aim to get your order to you within 30 minutes.</p>
-                <p>
+                <p className="hero-settle font-semibold text-ink" style={{ animationDelay: "320ms" }}>
+                  That’s why we built Sortd.
+                </p>
+                <p className="hero-settle" style={{ animationDelay: "380ms" }}>
+                  We still care about speed, and we aim to get your order to you within 30 minutes.
+                </p>
+                <p className="hero-settle" style={{ animationDelay: "440ms" }}>
                   We do the digging, the checking, the tasting and the rejecting before a product ever reaches you — so you
                   can shop with confidence, without overthinking every choice.
                 </p>
               </div>
             </div>
           </div>
-          <div className="relative order-2 h-[420px] w-full overflow-hidden rounded-[14px] bg-sky lg:h-[470px] lg:w-[400px] lg:rounded-2xl">
-            <Image
-              src="/photos/figma/founder.jpg"
-              alt="Portrait of the Sortd founder"
-              fill
-              priority
-              sizes="(min-width: 1024px) 400px, 100vw"
-              className="object-cover object-[center_18%]"
-            />
+          <div
+            className="hero-settle relative order-2 h-[420px] w-full overflow-hidden rounded-[14px] bg-sky lg:h-[470px] lg:w-[400px] lg:rounded-2xl"
+            style={{ animationDelay: "120ms" }}
+          >
+            <div className="hero-drift relative size-full">
+              <Image
+                src="/photos/figma/founder.jpg"
+                alt="Portrait of the Sortd founder"
+                fill
+                priority
+                sizes="(min-width: 1024px) 400px, 100vw"
+                className="hero-media object-cover object-[center_18%]"
+              />
+            </div>
           </div>
         </section>
 
         <section className="bg-ink px-6 py-14 text-[#fff2e6] lg:px-[100px] lg:py-[104px]">
-          <p className="max-w-[1033px] font-serif text-[34px] leading-[1.05] font-bold tracking-[-0.02em] lg:text-[76px] lg:leading-[0.92]">
-            <span className="lg:hidden">“Speed isn’t our reason to exist. Quality is.”</span>
-            <span className="hidden lg:inline">
-              “Future of commerce is not more choice, but who helps you make better decisions”
-            </span>
-          </p>
-          <div className="mt-6 lg:mt-9">
+          <Reveal>
+            <p className="max-w-[1033px] font-serif text-[34px] leading-[1.05] font-bold tracking-[-0.02em] lg:text-[76px] lg:leading-[0.92]">
+              <span className="lg:hidden">“Speed isn’t our reason to exist. Quality is.”</span>
+              <span className="hidden lg:inline">
+                “Future of commerce is not more choice, but who helps you make better decisions”
+              </span>
+            </p>
+          </Reveal>
+          <Reveal delay={120} className="mt-6 lg:mt-9">
             <p className="font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-sand lg:text-[11px]">
               [FOUNDER NAME]
             </p>
             <p className="mt-1 font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-faint">FOUNDER, SORTD</p>
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-[#fff2e6] px-6 py-14 lg:bg-white lg:px-[100px] lg:py-[104px]">
-          <p className="font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-leaf lg:text-[12px] lg:font-medium">
-            THE RESULT
-          </p>
-          <h2 className="mt-[18px] font-serif text-[34px] leading-[1.05] font-bold tracking-[-0.012em] lg:mt-[26px] lg:text-[64px] lg:leading-[0.95] lg:tracking-[-0.018em]">
-            What saying no adds up to.
-          </h2>
+          <Reveal>
+            <p className="font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-leaf lg:text-[12px] lg:font-medium">
+              THE RESULT
+            </p>
+            <h2 className="mt-[18px] font-serif text-[34px] leading-[1.05] font-bold tracking-[-0.012em] lg:mt-[26px] lg:text-[64px] lg:leading-[0.95] lg:tracking-[-0.018em]">
+              What saying no adds up to.
+            </h2>
+          </Reveal>
           <div className="mt-9 flex flex-col gap-[22px] lg:mt-16 lg:flex-row lg:gap-6">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex-1 border-t-2 border-ink pt-4 lg:pt-[22px]">
+            {stats.map((stat, index) => (
+              <Reveal
+                key={stat.label}
+                delay={index * 90}
+                className="flex-1 border-t-2 border-ink pt-4 lg:pt-[22px]"
+              >
                 <p className="font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-faint lg:text-[11px]">
                   NO TO
                 </p>
@@ -112,7 +136,7 @@ export default function AboutPage() {
                 <p className="mt-1.5 font-serif text-[20px] leading-[1.05] font-bold tracking-[-0.012em] lg:mt-2.5 lg:text-[28px]">
                   {stat.label}
                 </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </section>
@@ -129,9 +153,7 @@ export default function AboutPage() {
             className="object-cover object-[center_30%]"
           />
           <div className="relative px-3 pt-[150px] pb-3 lg:px-16 lg:pt-0 lg:pb-0">
-            <div
-              className="mx-auto flex max-w-[1218px] flex-col rounded-[20px] bg-[linear-gradient(to_top,#1e4a0b_58%,rgba(71,176,26,0.6)_157%)] px-6 pt-10 pb-7 text-[#fff2e6] lg:rounded-t-[28px] lg:rounded-b-none lg:bg-[linear-gradient(180deg,rgba(63,115,22,0.72)_0%,rgba(36,86,13,0.84)_32%,rgba(30,74,11,0.96)_58%,#1e4a0b_100%)] lg:px-[100px] lg:pt-24 lg:pb-14"
-            >
+            <Reveal className="mx-auto flex max-w-[1218px] flex-col rounded-[20px] bg-[linear-gradient(to_top,#1e4a0b_58%,rgba(71,176,26,0.6)_157%)] px-6 pt-10 pb-7 text-[#fff2e6] lg:rounded-t-[28px] lg:rounded-b-none lg:bg-[linear-gradient(180deg,rgba(63,115,22,0.72)_0%,rgba(36,86,13,0.84)_32%,rgba(30,74,11,0.96)_58%,#1e4a0b_100%)] lg:px-[100px] lg:pt-24 lg:pb-14">
               <h2 className="font-serif text-[42px] leading-[0.94] font-bold tracking-[-0.018em] lg:text-[84px] lg:leading-[0.9] lg:tracking-[-0.022em]">
                 That’s Sortd.
                 <span className="block text-sand">Only what passes.</span>
@@ -170,7 +192,7 @@ export default function AboutPage() {
                   © 2026 SORTD
                 </p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </footer>
