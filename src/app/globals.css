@@ -16,6 +16,7 @@
   --color-flag: #8c2f14;
   --color-flag-bg: #f7e3d8;
   --color-tint: #f8eadb;
+  --color-stop: #e23b32;
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-archivo-narrow), "Arial Narrow", sans-serif;
   --font-lora: var(--font-lora-family), Georgia, "Times New Roman", serif;
@@ -69,6 +70,30 @@ section[id],
 
 .skip-link:focus {
   transform: none;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-lora);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark-ink {
+  color: var(--color-ink);
+}
+
+.brand-mark-cream {
+  color: var(--color-cream);
+}
+
+.brand-period {
+  color: var(--color-stop);
+  font-weight: 700;
 }
 
 .ticker-clip {

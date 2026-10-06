@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { BrandMark } from "@/components/brand-mark";
 
 const links = [
   { href: "/about", label: "About" },
@@ -111,14 +112,10 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
             scrolled ? "h-[52px]" : "h-16"
           }`}
         >
-          <a
-            href="/"
-            className={`font-serif leading-none font-bold tracking-[-0.02em] text-ink transition-[font-size] duration-300 ${
-              scrolled ? "text-[22px] md:text-[26px]" : "text-[30px] md:text-[32px]"
-            }`}
-          >
-            Sortd
-          </a>
+          <BrandMark
+            size={scrolled ? "sm" : "md"}
+            className="transition-[font-size] duration-300"
+          />
 
           {scrolled && sectionLabel ? (
             <p className="pointer-events-none absolute left-1/2 flex -translate-x-1/2 items-center gap-2 font-mono text-[11px] tracking-[0.14em] text-ink uppercase md:hidden">
@@ -175,9 +172,7 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
         >
           <div className="flex min-h-dvh flex-col px-5 pt-0 pb-8">
             <div className="flex h-16 items-center justify-between">
-              <p id={titleId} className="font-serif text-[30px] leading-none font-bold tracking-[-0.02em] text-[#fff2e6]">
-                Sortd
-              </p>
+              <BrandMark href={null} tone="cream" size="lg" id={titleId} />
               <button
                 type="button"
                 className="grid size-10 place-items-center rounded-full border-[1.5px] border-[#fff2e6] text-[#fff2e6]"
