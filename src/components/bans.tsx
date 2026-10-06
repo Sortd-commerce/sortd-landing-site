@@ -3,7 +3,7 @@
 import { bans } from "@/lib/content";
 import { Reveal } from "@/components/reveal";
 import { useFinePointer, usePrefersReducedMotion } from "@/components/use-prefers-reduced-motion";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/optimized-image";
 import { useRef, useState } from "react";
 
 export function Bans() {
@@ -134,12 +134,11 @@ export function Bans() {
               aria-current={active === ban.id ? "true" : undefined}
             >
               <Reveal delay={Math.min(index, 4) * 80} className="flex h-full w-full flex-col">
-                <Image
+                <OptimizedImage
                   src={ban.src}
                   alt={ban.alt}
                   width={1774}
                   height={887}
-                  unoptimized
                   sizes="400px"
                   className="reveal-media block aspect-[2/1] h-auto w-full object-cover"
                 />

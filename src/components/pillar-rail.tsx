@@ -1,7 +1,7 @@
 "use client";
 
 import { pillars } from "@/lib/content";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/optimized-image";
 import { useRef, useState } from "react";
 
 export function PillarRail() {
@@ -41,11 +41,10 @@ export function PillarRail() {
             data-pillar=""
             className="relative h-[440px] w-[300px] shrink-0 snap-start overflow-hidden rounded-[20px]"
           >
-            <Image
+            <OptimizedImage
               src={card.src}
               alt=""
               fill
-              unoptimized
               sizes="300px"
               className="object-cover object-[72%_center]"
             />

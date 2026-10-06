@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/optimized-image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
@@ -82,7 +82,7 @@ export default function AboutPage() {
             style={{ animationDelay: "120ms" }}
           >
             <div className="hero-drift relative size-full">
-              <Image
+              <OptimizedImage
                 src="/photos/figma/founder.jpg"
                 alt="Portrait of the Sortd founder"
                 fill
@@ -144,11 +144,10 @@ export default function AboutPage() {
 
       <footer className="relative bg-white">
         <div className="relative min-h-[640px] lg:flex lg:min-h-[760px] lg:flex-col lg:justify-end">
-          <Image
+          <OptimizedImage
             src="/photos/figma/footer-produce.svg"
             alt=""
             fill
-            unoptimized
             sizes="100vw"
             className="object-cover object-[center_30%]"
           />

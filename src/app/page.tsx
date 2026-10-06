@@ -8,7 +8,7 @@ import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { WobbleCard } from "@/components/wobble-card";
 import { comparisons, gates, pillars, ticker } from "@/lib/content";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/optimized-image";
 
 export default function HomePage() {
   return (
@@ -86,7 +86,7 @@ export default function HomePage() {
             <HeroHoverCard index={0} radius={16}>
               <div className="relative aspect-[416/470] w-full overflow-hidden rounded-[16px] bg-ink md:aspect-[416/470] md:h-[470px] md:w-[416px]">
                 <div className="hero-drift relative size-full">
-                  <Image
+                  <OptimizedImage
                     src="/photos/hero-apple-figma.jpg"
                     alt="A gloved hand tests a red apple with a refractometer"
                     fill
@@ -110,9 +110,8 @@ export default function HomePage() {
                   <div className="relative aspect-[200/180] overflow-hidden rounded-[12px] bg-sky md:aspect-auto md:h-[180px] md:w-[200px]">
                     <div className="absolute top-1/2 left-1/2 h-[140.5556%] w-[126.5%] -translate-x-1/2 -translate-y-1/2 md:h-[253px] md:w-[253px]">
                       <div className="hero-drift relative size-full">
-                        <Image
+                        <OptimizedImage
                           src="/photos/figma/thumb-veg.svg"
-                          unoptimized
                           alt="Tomatoes, spinach, and carrots laid out for inspection"
                           fill
                           sizes="(min-width: 768px) 253px, 40vw"
@@ -128,9 +127,8 @@ export default function HomePage() {
                   <div className="relative aspect-[200/180] overflow-hidden rounded-[12px] bg-sky md:aspect-auto md:h-[180px] md:w-[200px]">
                     <div className="absolute bottom-0 left-0 h-[110.5556%] w-[145.5%] md:h-[199px] md:w-[291px]">
                       <div className="hero-drift relative size-full">
-                        <Image
+                        <OptimizedImage
                           src="/photos/figma/thumb-lentils.svg"
-                          unoptimized
                           alt="A batch of lentils checked under a magnifier"
                           fill
                           sizes="(min-width: 768px) 291px, 46vw"
@@ -191,11 +189,10 @@ export default function HomePage() {
                     href={card.href}
                     className="relative block aspect-[397/580] overflow-hidden rounded-[20px]"
                   >
-                    <Image
+                    <OptimizedImage
                       src={card.src}
                       alt=""
                       fill
-                      unoptimized
                       sizes="(min-width: 768px) 30vw, 100vw"
                       className={`reveal-media object-cover ${card.image_position || "object-[72%_center]"}`}
                     />
@@ -407,12 +404,11 @@ export default function HomePage() {
                           : "origin-bottom motion-safe:md:hover:z-10 motion-safe:md:hover:rotate-6"
                     }`}
                   >
-                    <Image
+                    <OptimizedImage
                       src={item.src}
                       alt={`${item.name}, split between what passes and what does not`}
                       width={1127}
                       height={1396}
-                      unoptimized
                       sizes="(min-width: 768px) 30vw, 100vw"
                       className="reveal-media h-auto w-full"
                     />
@@ -425,9 +421,8 @@ export default function HomePage() {
 
         <footer className="px-3 pb-3 md:px-0 md:pb-0">
           <div className="relative overflow-hidden rounded-[20px] md:rounded-none">
-            <Image
+            <OptimizedImage
               src="/photos/figma/footer-produce.svg"
-              unoptimized
               alt=""
               width={1800}
               height={222}

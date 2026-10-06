@@ -2,7 +2,7 @@
 
 import { CheckMark, CrossMark } from "@/components/marks";
 import { comparisons } from "@/lib/content";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/optimized-image";
 import { useRef, useState } from "react";
 
 export function CompareViewer() {
@@ -80,7 +80,7 @@ export function CompareViewer() {
             aria-hidden={i === index ? undefined : true}
           >
             <div className="relative overflow-hidden">
-              <Image
+              <OptimizedImage
                 src={item.src.replace(".svg", "-wash.jpg")}
                 alt=""
                 width={929}

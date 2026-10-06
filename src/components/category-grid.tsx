@@ -2,7 +2,7 @@
 
 import { categories } from "@/lib/content";
 import { Reveal } from "@/components/reveal";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/optimized-image";
 import { useEffect, useState } from "react";
 
 const previewCount = 9;
@@ -35,12 +35,11 @@ export function CategoryGrid() {
             >
               <Reveal delay={Math.min(index, 8) * 45}>
                 <div className="overflow-hidden rounded-[12px] md:rounded-[28px]">
-                  <Image
+                  <OptimizedImage
                     src={item.src}
                     alt=""
                     width={379}
                     height={379}
-                    unoptimized={item.src.endsWith(".svg")}
                     sizes="(min-width: 1024px) 15vw, (min-width: 768px) 30vw, 30vw"
                     className="reveal-media aspect-square h-auto w-full object-cover"
                   />
