@@ -1,3 +1,7 @@
+/** Link for "See all products" CTAs in the header and across the site. */
+export const seeAllProductsLink =
+  process.env.NEXT_PUBLIC_SEE_ALL_PRODUCTS_LINK ?? "/#products";
+
 export const ticker = [
   "No to big brands that cut corners",
   "No to fruit lacking sweetness and crunch",
@@ -190,7 +194,7 @@ export const pillars = [
     body: "No label decoding, no endless comparison. If it is on Sortd, it already passed.",
     cta: "Browse the shelf",
     alt: "Feel better. Less guesswork. More good food. If it is on Sortd, it already passed.",
-    href: "/#products",
+    href: seeAllProductsLink,
     image_position: "object-[50%_center]",
   },
 ];

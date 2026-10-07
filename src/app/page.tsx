@@ -7,7 +7,7 @@ import { PillarRail } from "@/components/pillar-rail";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { WobbleCard } from "@/components/wobble-card";
-import { comparisons, gates, pillars, ticker } from "@/lib/content";
+import { comparisons, gates, pillars, seeAllProductsLink, ticker } from "@/lib/content";
 import { OptimizedImage } from "@/components/optimized-image";
 
 export default function HomePage() {
@@ -64,7 +64,7 @@ export default function HomePage() {
               style={{ animationDelay: "220ms" }}
             >
               <a
-                href="#products"
+                href={seeAllProductsLink}
                 className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-ink px-4 text-[15px] font-semibold text-cream hover:bg-panel md:hidden"
               >
                 See our products
@@ -353,7 +353,7 @@ export default function HomePage() {
               place.
             </p>
             <a
-              href="#products-grid"
+              href={seeAllProductsLink}
               className="mt-6 hidden min-h-11 items-center rounded-full bg-ink px-5 text-base font-semibold text-cream hover:bg-panel md:inline-flex"
             >
               See our Products
@@ -439,7 +439,7 @@ export default function HomePage() {
                   Everything else is removed.
                 </h2>
                 <a
-                  href="#products"
+                  href={seeAllProductsLink}
                   className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-cream px-5 text-[15px] font-semibold text-ink hover:bg-white md:mt-[54px] md:w-fit md:justify-start md:rounded-xl md:px-7 md:py-4 md:font-medium"
                 >
                   <span className="md:hidden">See the products</span>

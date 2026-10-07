@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Archivo_Narrow, IBM_Plex_Mono, Lora } from "next/font/google";
+import { Archivo, Archivo_Narrow, IBM_Plex_Mono, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sortd.com";
@@ -12,11 +12,10 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const lora = Lora({
-  variable: "--font-lora-family",
+const brand = Libre_Baskerville({
+  variable: "--font-brand-family",
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["italic"],
+  weight: ["700"],
   display: "swap",
 });
 
@@ -104,7 +103,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${archivo.variable} ${archivoNarrow.variable} ${lora.variable} ${plex.variable} h-full antialiased`}>
+    <html lang="en" className={`${archivo.variable} ${archivoNarrow.variable} ${brand.variable} ${plex.variable} h-full antialiased`}>
       <body className="min-h-full bg-white text-body">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {children}

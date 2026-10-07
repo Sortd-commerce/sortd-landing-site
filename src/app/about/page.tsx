@@ -3,6 +3,7 @@ import { OptimizedImage } from "@/components/optimized-image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
+import { seeAllProductsLink } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -159,7 +160,7 @@ export default function AboutPage() {
                 Everything else is removed.
               </h2>
               <Link
-                href="/#products"
+                href={seeAllProductsLink}
                 className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-[#fff2e6] px-7 py-4 text-[15px] leading-[1.2] font-semibold text-ink lg:mt-[54px] lg:w-fit lg:rounded-xl lg:py-4 lg:font-medium"
               >
                 <span className="lg:hidden">See the products</span>

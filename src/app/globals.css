@@ -19,7 +19,7 @@
   --color-stop: #e23b32;
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-archivo-narrow), "Arial Narrow", sans-serif;
-  --font-lora: var(--font-lora-family), Georgia, "Times New Roman", serif;
+  --font-brand: var(--font-brand-family), "Libre Baskerville", Georgia, "Times New Roman", serif;
   --font-mono: var(--font-plex-family), ui-monospace, monospace;
 }
 
@@ -75,7 +75,7 @@ section[id],
 .brand-mark {
   display: inline-flex;
   align-items: baseline;
-  font-family: var(--font-lora);
+  font-family: var(--font-brand);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
