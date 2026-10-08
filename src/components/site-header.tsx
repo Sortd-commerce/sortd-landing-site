@@ -142,7 +142,7 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
               } min-h-11 items-center rounded-full bg-ink px-4 text-[15px] leading-[1.4] font-medium text-cream transition-colors hover:bg-panel md:px-5`}
             >
               <span className="md:hidden">Products</span>
-              <span className="hidden md:inline">See our Products</span>
+              <span className="hidden md:inline">Shop now</span>
             </a>
             <button
               type="button"
@@ -224,7 +224,7 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
                 className="inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full bg-[#fff2e6] text-[15px] font-semibold text-ink"
                 onClick={closeMenu}
               >
-                See our products
+                Shop now
                 <span aria-hidden="true">→</span>
               </a>
               <p className="mt-4 text-center font-serif text-[22px] leading-none font-bold tracking-[-0.01em] text-sand">
@@ -243,7 +243,7 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
           showFloat && !open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >
-        See our products
+        Shop now
         <span className="grid size-[38px] place-items-center rounded-full bg-[#c9e3ce] text-ink" aria-hidden="true">
           <svg width="16" height="16" viewBox="0 0 16 16">
             <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" />

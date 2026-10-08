@@ -67,7 +67,7 @@ export default function HomePage() {
                 href={seeAllProductsLink}
                 className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-ink px-4 text-[15px] font-semibold text-cream hover:bg-panel md:hidden"
               >
-                See our products
+                Shop now
               </a>
               <a
                 href="#vet"
@@ -329,43 +329,6 @@ export default function HomePage() {
         </section>
 
         <section
-          id="products"
-          className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28"
-          aria-labelledby="products-title"
-        >
-          <Reveal>
-            <h2
-              id="products-title"
-              className="max-w-3xl font-serif text-[42px] leading-[0.9] font-bold tracking-[-0.043em] text-ink md:text-[84px] md:leading-[0.92] md:tracking-[-0.02em]"
-            >
-              <span className="md:hidden">
-                Everything here earned its place.
-              </span>
-              <span className="hidden md:inline">
-                Seventeen categories.
-                <br />
-                Twenty-eight products.
-              </span>
-            </h2>
-            <p className="mt-4 max-w-xl text-base leading-[1.55] text-body md:mt-5 md:text-[21px]">
-              The entire shop today. Every one of them cleared the same four
-              gates, and the range only grows when something new earns its
-              place.
-            </p>
-            <a
-              href={seeAllProductsLink}
-              className="mt-6 hidden min-h-11 items-center rounded-full bg-ink px-5 text-base font-semibold text-cream hover:bg-panel md:inline-flex"
-            >
-              See our Products
-            </a>
-          </Reveal>
-
-          <CategoryGrid />
-        </section>
-
-        <Bans />
-
-        <section
           className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28"
           aria-labelledby="compare-title"
         >
@@ -419,6 +382,43 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section
+          id="products"
+          className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28"
+          aria-labelledby="products-title"
+        >
+          <Reveal>
+            <h2
+              id="products-title"
+              className="max-w-3xl font-serif text-[42px] leading-[0.9] font-bold tracking-[-0.043em] text-ink md:text-[84px] md:leading-[0.92] md:tracking-[-0.02em]"
+            >
+              <span className="md:hidden">
+                Everything here earned its place.
+              </span>
+              <span className="hidden md:inline">
+                Seventeen categories.
+                <br />
+                Twenty-eight products.
+              </span>
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-[1.55] text-body md:mt-5 md:text-[21px]">
+              The entire shop today. Every one of them cleared the same four
+              gates, and the range only grows when something new earns its
+              place.
+            </p>
+            <a
+              href={seeAllProductsLink}
+              className="mt-6 hidden min-h-11 items-center rounded-full bg-ink px-5 text-base font-semibold text-cream hover:bg-panel md:inline-flex"
+            >
+              Shop now
+            </a>
+          </Reveal>
+
+          <CategoryGrid />
+        </section>
+
+        <Bans />
+
         <footer className="px-3 pb-3 md:px-0 md:pb-0">
           <div className="relative overflow-hidden rounded-[20px] md:rounded-none">
             <OptimizedImage
@@ -442,8 +442,7 @@ export default function HomePage() {
                   href={seeAllProductsLink}
                   className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-cream px-5 text-[15px] font-semibold text-ink hover:bg-white md:mt-[54px] md:w-fit md:justify-start md:rounded-xl md:px-7 md:py-4 md:font-medium"
                 >
-                  <span className="md:hidden">See the products</span>
-                  <span className="hidden md:inline">See The Products</span>
+                  Shop now
                   <span className="md:hidden" aria-hidden="true">
                     →
                   </span>

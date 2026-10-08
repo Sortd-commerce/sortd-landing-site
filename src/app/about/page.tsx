@@ -106,7 +106,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={120} className="mt-6 lg:mt-9">
             <p className="font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-sand lg:text-[11px]">
-              [FOUNDER NAME]
+              Shubh Savalia
             </p>
             <p className="mt-1 font-mono text-[10px] leading-[1.3] tracking-[0.14em] text-faint">FOUNDER, SORTD</p>
           </Reveal>
@@ -163,8 +163,7 @@ export default function AboutPage() {
                 href={seeAllProductsLink}
                 className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-[#fff2e6] px-7 py-4 text-[15px] leading-[1.2] font-semibold text-ink lg:mt-[54px] lg:w-fit lg:rounded-xl lg:py-4 lg:font-medium"
               >
-                <span className="lg:hidden">See the products</span>
-                <span className="hidden lg:inline">See The Products</span>
+                Shop now
                 <span className="lg:hidden" aria-hidden="true">
                   →
                 </span>
