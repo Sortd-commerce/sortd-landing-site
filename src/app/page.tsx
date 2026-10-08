@@ -66,7 +66,7 @@ export default function HomePage() {
             >
               <a
                 href={seeAllProductsLink}
-                className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-ink px-4 text-[15px] font-semibold text-cream hover:bg-panel md:hidden"
+                className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-ink px-4 text-[15px] font-semibold text-cream hover:bg-panel md:min-h-11 md:px-5 md:text-base"
               >
                 Shop now
               </a>
