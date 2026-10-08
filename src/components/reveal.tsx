@@ -18,19 +18,27 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
     if (!node) return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reveal = (show: boolean) => {
+      queueMicrotask(() => {
+        setReady(true);
+        if (show) setShown(true);
+      });
+    };
+
     if (reduce) {
-      setShown(true);
+      reveal(true);
       return;
     }
 
     const rect = node.getBoundingClientRect();
     const inView = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
-    setReady(true);
 
     if (inView) {
-      setShown(true);
+      reveal(true);
       return;
     }
+
+    reveal(false);
 
     const observer = new IntersectionObserver(
       ([entry]) => {

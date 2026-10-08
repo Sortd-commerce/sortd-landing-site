@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Bans } from "@/components/bans";
 import { CategoryGrid } from "@/components/category-grid";
 import { CompareViewer } from "@/components/compare-viewer";
@@ -452,9 +453,9 @@ export default function HomePage() {
                     aria-label="Footer"
                     className="flex flex-wrap gap-x-6 gap-y-2 text-base text-white md:hidden"
                   >
-                    <a href="/">Home</a>
-                    <a href="/about">About Us</a>
-                    <a href="/#products">Products</a>
+                    <Link href="/">Home</Link>
+                    <Link href="/about">About Us</Link>
+                    <Link href="/#products">Products</Link>
                   </nav>
                   <div className="mt-6 flex items-end justify-between gap-4 md:hidden">
                     <p className="font-serif text-[22px] leading-none font-bold tracking-[-0.01em] text-white">

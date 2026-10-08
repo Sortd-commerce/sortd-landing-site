@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { BrandMark } from "@/components/brand-mark";
 import { seeAllProductsLink } from "@/lib/content";
@@ -129,9 +130,9 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
             <a href="/about" className="rounded-full px-1 py-2 hover:text-ink">
               About
             </a>
-            <a href="/#products" className="rounded-full px-1 py-2 hover:text-ink">
+            <Link href="/#products" className="rounded-full px-1 py-2 hover:text-ink">
               Products
-            </a>
+            </Link>
           </nav>
 
           <div className="flex items-center gap-2.5">
