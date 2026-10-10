@@ -20,20 +20,20 @@ function BrandWordmark({
       alt="Sortd"
       width={640}
       height={189}
-      className={["block h-auto w-auto shrink-0", className].filter(Boolean).join(" ")}
+      className="block h-auto w-full shrink-0"
     />
   );
 
   if (!href) {
     return (
-      <span id={id} className="inline-flex items-center">
+      <span id={id} className={`inline-flex items-center ${className}`}>
         {logo}
       </span>
     );
   }
 
   return (
-    <Link id={id} href={href} aria-label="Sortd home" className="inline-flex items-center">
+    <Link id={id} href={href} aria-label="Sortd home" className={`inline-flex items-center ${className}`}>
       {logo}
     </Link>
   );
@@ -62,11 +62,6 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const lastY = useRef(0);
   const settleTimer = useRef<number | null>(null);
-
-  async function signOut() {
-    await fetch("/api/auth/logout", { method: "POST" });
-    window.location.reload();
-  }
 
   useEffect(() => {
     const onScroll = () => {
@@ -154,7 +149,7 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
           }`}
         >
           <BrandWordmark
-            className={scrolled ? "h-[24px] md:h-[28px]" : "h-[28px] md:h-[32px]"}
+            className={scrolled ? "w-16 md:w-[84px]" : "w-[72px] md:w-24"}
           />
 
           {scrolled && sectionLabel ? (
@@ -174,13 +169,6 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
           </nav>
 
           <div className="flex items-center gap-2.5">
-            <button
-              type="button"
-              onClick={signOut}
-              className="hidden min-h-11 items-center rounded-full px-3 text-sm font-medium text-body hover:text-ink md:inline-flex"
-            >
-              Sign out
-            </button>
             <a
               href={seeAllProductsLink}
               target="_blank"
@@ -221,7 +209,7 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
         >
           <div className="flex min-h-dvh flex-col px-5 pt-0 pb-8">
             <div className="flex h-16 items-center justify-between">
-              <BrandWordmark href={null} id={titleId} className="h-[28px] w-auto md:h-[32px]" />
+              <BrandWordmark href={null} id={titleId} className="w-[72px] md:w-24" />
               <button
                 type="button"
                 className="grid size-10 place-items-center rounded-full border-[1.5px] border-[#fff2e6] text-[#fff2e6]"
@@ -280,13 +268,6 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
               <p className="mt-4 text-center font-serif text-[22px] leading-none font-bold tracking-[-0.01em] text-sand">
                 Only what passes.
               </p>
-              <button
-                type="button"
-                onClick={signOut}
-                className="mt-5 min-h-11 px-4 text-sm font-medium text-[#fff2e6]/80 underline underline-offset-4"
-              >
-                Sign out
-              </button>
             </div>
           </div>
         </dialog>
