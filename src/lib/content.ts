@@ -17,7 +17,7 @@ export const gates = [
   { n: "01", q: "What’s inside the pack?", status: "Passed", state: "done" },
   { n: "02", q: "Does it meet our standard?", status: "Passed", state: "done" },
   { n: "03", q: "Can we prove the claims?", status: "Checking", state: "active" },
-  { n: "04", q: "Can we prove the claims?", status: "Up next", state: "next" },
+  { n: "04", q: "Does it pass our test?", status: "Up next", state: "next" },
 ];
 
 export const categories = [
