@@ -67,24 +67,6 @@ export function Bans() {
         </Reveal>
 
         <div className="mt-7 flex items-center gap-2 md:mt-8">
-          <div className="no-scrollbar flex min-w-0 flex-1 gap-2 overflow-x-auto md:flex-wrap" role="group" aria-label="Banned ingredient groups">
-            {bans.map((ban) => {
-              const selected = active === ban.id;
-              return (
-                <button
-                  key={ban.id}
-                  type="button"
-                  aria-pressed={selected}
-                  onClick={() => scrollToCard(ban.id)}
-                  className={`min-h-9 shrink-0 rounded-full border px-3.5 text-sm whitespace-nowrap transition-colors ${
-                    selected ? "border-sand bg-sand text-ink" : "border-white/55 text-white hover:border-white"
-                  }`}
-                >
-                  {ban.label}
-                </button>
-              );
-            })}
-          </div>
           <div className="hidden gap-2 md:flex">
             <button
               type="button"

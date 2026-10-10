@@ -138,6 +138,8 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
           <div className="flex items-center gap-2.5">
             <a
               href={seeAllProductsLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`${
                 scrolled ? "hidden md:inline-flex" : "inline-flex"
               } min-h-11 items-center rounded-full bg-ink px-4 text-[15px] leading-[1.4] font-medium text-cream transition-colors hover:bg-panel md:px-5`}
@@ -222,6 +224,8 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
             <div className="menu-rise mt-auto flex flex-col items-center pt-10" style={{ animationDelay: "360ms" }}>
               <a
                 href={seeAllProductsLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full bg-[#fff2e6] text-[15px] font-semibold text-ink"
                 onClick={closeMenu}
               >
@@ -238,6 +242,8 @@ export function SiteHeader({ mobileOnly = false }: { mobileOnly?: boolean }) {
 
       <a
         href={seeAllProductsLink}
+        target="_blank"
+        rel="noopener noreferrer"
         tabIndex={showFloat && !open ? 0 : -1}
         aria-hidden={showFloat && !open ? undefined : true}
         className={`fixed inset-x-4 bottom-4 z-30 flex h-[60px] items-center justify-between rounded-full bg-ink pr-3 pl-6 text-[15px] font-semibold text-[#fff2e6] shadow-[0_16px_40px_rgb(20_53_3_/_0.28)] transition duration-300 md:hidden ${

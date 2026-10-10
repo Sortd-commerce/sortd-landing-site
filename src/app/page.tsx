@@ -66,6 +66,8 @@ export default function HomePage() {
             >
               <a
                 href={seeAllProductsLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-ink px-4 text-[15px] font-semibold text-cream hover:bg-panel md:min-h-11 md:px-5 md:text-base"
               >
                 Shop now
@@ -81,14 +83,14 @@ export default function HomePage() {
           </div>
 
           <HeroHoverGroup
-            className="hero-settle flex w-full flex-col items-start gap-[14px] md:h-[664px] md:w-[480px]"
+            className="hero-settle flex w-full flex-col items-stretch gap-[14px] md:items-start md:h-[664px] md:w-[480px]"
             style={{ animationDelay: "120ms" }}
           >
             <HeroHoverCard index={0} radius={16}>
               <div className="relative aspect-[416/470] w-full overflow-hidden rounded-[16px] bg-ink md:aspect-[416/470] md:h-[470px] md:w-[416px]">
                 <div className="hero-drift relative size-full">
                   <OptimizedImage
-                    src="/photos/hero-apple-figma.jpg"
+                    src="/photos/hero-new-image.jpg"
                     alt="A gloved hand tests a red apple with a refractometer"
                     fill
                     priority
@@ -109,10 +111,10 @@ export default function HomePage() {
               <div className="min-w-0 flex-1 md:w-[200px] md:flex-none">
                 <HeroHoverCard index={1} radius={12}>
                   <div className="relative aspect-[200/180] overflow-hidden rounded-[12px] bg-sky md:aspect-auto md:h-[180px] md:w-[200px]">
-                    <div className="absolute top-1/2 left-1/2 h-[140.5556%] w-[126.5%] -translate-x-1/2 -translate-y-1/2 md:h-[253px] md:w-[253px]">
+                    <div className="absolute top-1/2 left-1/2 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 md:h-[203px] md:w-[203px]">
                       <div className="hero-drift relative size-full">
                         <OptimizedImage
-                          src="/photos/figma/thumb-veg.svg"
+                          src="/photos/new-images/9fff488e06d3828266873f8985ef08e40658eb73.jpg"
                           alt="Tomatoes, spinach, and carrots laid out for inspection"
                           fill
                           sizes="(min-width: 768px) 253px, 40vw"
@@ -129,7 +131,7 @@ export default function HomePage() {
                     <div className="absolute bottom-0 left-0 h-[110.5556%] w-[145.5%] md:h-[199px] md:w-[291px]">
                       <div className="hero-drift relative size-full">
                         <OptimizedImage
-                          src="/photos/figma/thumb-lentils.svg"
+                          src="/photos/new-images/f65eec21a042d99548ca0b61df99e9d2c56ed6eb.png"
                           alt="A batch of lentils checked under a magnifier"
                           fill
                           sizes="(min-width: 768px) 291px, 46vw"
@@ -234,11 +236,10 @@ export default function HomePage() {
                 id="vet-title"
                 className="max-w-4xl font-serif text-[42px] leading-[0.9] font-bold tracking-[-0.043em] text-ink md:text-[84px] md:leading-[0.92] md:tracking-[-0.02em]"
               >
-                Four questions, before anything reaches a shelf.
+                Nothing gets listed by default.
               </h2>
               <p className="mt-5 max-w-3xl pr-10 text-base leading-[1.5] text-body md:text-[21px] md:leading-[1.55]">
-                Every product runs through the same four gates, in the same
-                order. A product that fails any one of them does not get listed.
+                Every product has to earn its place.
               </p>
             </Reveal>
             <ol className="relative mt-9 space-y-3 md:hidden">
@@ -397,9 +398,7 @@ export default function HomePage() {
                 Everything here earned its place.
               </span>
               <span className="hidden md:inline">
-                Seventeen categories.
-                <br />
-                Twenty-eight products.
+                We don’t believe in endless choice
               </span>
             </h2>
             <p className="mt-4 max-w-xl text-base leading-[1.55] text-body md:mt-5 md:text-[21px]">
@@ -409,6 +408,8 @@ export default function HomePage() {
             </p>
             <a
               href={seeAllProductsLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 hidden min-h-11 items-center rounded-full bg-ink px-5 text-base font-semibold text-cream hover:bg-panel md:inline-flex"
             >
               Shop now
@@ -441,6 +442,8 @@ export default function HomePage() {
                 </h2>
                 <a
                   href={seeAllProductsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-cream px-5 text-[15px] font-semibold text-ink hover:bg-white md:mt-[54px] md:w-fit md:justify-start md:rounded-xl md:px-7 md:py-4 md:font-medium"
                 >
                   Shop now

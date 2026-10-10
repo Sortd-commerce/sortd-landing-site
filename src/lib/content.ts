@@ -14,10 +14,10 @@ export const ticker = [
 ];
 
 export const gates = [
-  { n: "01", q: "Is this worth evaluating?", status: "Passed", state: "done" },
-  { n: "02", q: "Does it meet scientific standards?", status: "Passed", state: "done" },
-  { n: "03", q: "Can we trust the supplier?", status: "Checking", state: "active" },
-  { n: "04", q: "Would our experts recommend it?", status: "Up next", state: "next" },
+  { n: "01", q: "What’s inside the pack?", status: "Passed", state: "done" },
+  { n: "02", q: "Does it meet our standard?", status: "Passed", state: "done" },
+  { n: "03", q: "Can we prove the claims?", status: "Checking", state: "active" },
+  { n: "04", q: "Can we prove the claims?", status: "Up next", state: "next" },
 ];
 
 export const categories = [
@@ -168,7 +168,7 @@ export const comparisons = [
 
 export const pillars = [
   {
-    src: "/photos/figma/img-011322-am-1.svg",
+    src: "/photos/new-images/506b18f2bf4be5edf8c29baaa54a3413cbd021d1.png",
     kicker: "Choose better",
     title: "What goes in the basket matters.",
     body: "We choose products for what is actually in them, not for what the front of the pack says.",
@@ -178,7 +178,7 @@ export const pillars = [
     image_position: "object-[50%_center]",
   },
   {
-    src: "/photos/figma/img-011306-am-1.svg",
+    src: "/photos/new-images/04eda68aea04427d54d68f0d8f8ecd8cc250cfdc.png",
     kicker: "Know better",
     title: "Good food starts with a good label.",
     body: "Every product is checked past the claim — ingredients, nutrition, sourcing and lab results.",
@@ -188,7 +188,7 @@ export const pillars = [
     image_position: "object-[55%_center]",
   },
   {
-    src: "/photos/figma/img-011302-am-1.svg",
+    src: "/photos/new-images/d6409e77a1227c0adbdb550bd9bdb5c0e18ceab6.png",
     kicker: "Feel better",
     title: "Less guesswork. More good food.",
     body: "No label decoding, no endless comparison. If it is on Sortd, it already passed.",

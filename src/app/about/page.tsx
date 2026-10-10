@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "500+", label: "harmful ingredients" },
-  { value: "Zero", label: "ultra-processed food" },
-  { value: "None", label: "misleading claims" },
+  { value: "Ingredients", label: "What’s actually inside." },
+  { value: "Nutrition", label: "What the numbers really say" },
+  { value: "Claims", label: "Whether they actually hold up" },
 ];
 
 export default function AboutPage() {
@@ -118,7 +118,7 @@ export default function AboutPage() {
               THE RESULT
             </p>
             <h2 className="mt-[18px] font-serif text-[34px] leading-[1.05] font-bold tracking-[-0.012em] lg:mt-[26px] lg:text-[64px] lg:leading-[0.95] lg:tracking-[-0.018em]">
-              What saying no adds up to.
+              We do the hard work of decoding every label, so you never have to
             </h2>
           </Reveal>
           <div className="mt-9 flex flex-col gap-[22px] lg:mt-16 lg:flex-row lg:gap-6">
@@ -161,6 +161,8 @@ export default function AboutPage() {
               </h2>
               <Link
                 href={seeAllProductsLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-[#fff2e6] px-7 py-4 text-[15px] leading-[1.2] font-semibold text-ink lg:mt-[54px] lg:w-fit lg:rounded-xl lg:py-4 lg:font-medium"
               >
                 Shop now
